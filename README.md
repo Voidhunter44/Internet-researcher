@@ -19,23 +19,35 @@ This project bridges that gap by providing a file-based communication system tha
 - **Content Fetching**: Retrieves and processes web page content for detailed information
 - **Logging**: All activities are logged for review and debugging
 
-## Installation
-
-For installation instructions, please refer to the official Qwen Code documentation:
-[Qwen Code Installation Guide and Qwen Code Complete Introduction](https://github.com/QwenLM/qwen-code)
+## Download & Installation
 
 ### Prerequisites
 
 - Python 3.6 or later (for the research engine)
 - Required Python packages: `requests`, `beautifulsoup4`, `ddgs`, `googlesearch-python`
 
+### Download from GitHub
+
+1. **Clone the repository** (requires Git):
+   ```bash
+   git clone https://github.com/Voidhunter44/internet-research-viewer.git
+   ```
+
+2. **Or download as ZIP**:
+   - Click the green "Code" button at the top of this page
+   - Select "Download ZIP"
+   - Extract the ZIP file to your desired location
+
 ### Install Python Packages
 
 ```bash
+# Navigate to the project directory
+cd internet-research-viewer
+
 # Option 1: Install packages individually
 pip install requests beautifulsoup4 ddgs googlesearch-python
 
-# Option 2: Use the requirements.txt file
+# Option 2: Use the requirements.txt file (recommended)
 pip install -r requirements.txt
 ```
 
@@ -56,6 +68,15 @@ To verify that everything is working correctly:
 2. Run the research engine using `scripts\run-engine.bat`
 3. Wait a few seconds for the research to complete
 4. Check that `research_response.txt` now contains the results
+5. Tell Qwen Code to look something up and tell Qwen where the downloaded repository is and it should understand and run the script.
+
+### Integration with Qwen Code
+
+To use this with Qwen Code:
+1. Place the downloaded repository in a convenient location
+2. Tell Qwen Code to perform research by creating/modifying the `research_request.txt` file
+3. Qwen Code can monitor `research_response.txt` for results
+4. The engine will automatically run in the background when started
 
 ## How It Works
 
@@ -85,7 +106,15 @@ The research engine monitors `research_request.txt` for search queries. When it 
 
 ## Contributing
 
-This project is organized to be easily shared and contributed to on GitHub. All source code is in the `src` directory, and all utility scripts are in the `scripts` directory.
+Contributions are welcome! If you'd like to contribute to this project:
+
+1. Fork the repository
+2. Create a new branch for your feature
+3. Commit your changes
+4. Push to your branch
+5. Create a pull request
+
+Please ⭐ Star this repository if you find it useful! It helps others discover the project and shows appreciation for the work done.
 
 ## License
 
