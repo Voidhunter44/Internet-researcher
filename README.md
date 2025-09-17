@@ -1,8 +1,8 @@
-# Internet Research Viewer - Extending Qwen Code Capabilities
+# Internet Research Engine - Extending Qwen Code Capabilities
 
 ## Project Overview
 
-This project is designed to extend the capabilities of Qwen Code, bringing back the powerful internet research functionality that was once a core feature. After the removal of Qwen's built-in search feature, finding accurate and up-to-date information became challenging. The directions for doing things became outdated, and some information was scattered or deprecated. This tool aims to restore that functionality by providing a real-time internet research viewer that works seamlessly with Qwen Code.
+This project is designed to extend the capabilities of Qwen Code, bringing back the powerful internet research functionality that was once a core feature. After the removal of Qwen's built-in search feature, finding accurate and up-to-date information became challenging. The directions for doing things became outdated, and some information was scattered or deprecated. This tool aims to restore that functionality by providing a file-based internet research engine that works seamlessly with Qwen Code.
 
 ## What is Qwen Code?
 
@@ -10,25 +10,22 @@ Qwen Code is an interactive CLI agent developed by Alibaba Group, specializing i
 
 ## Project Purpose
 
-This project bridges that gap by providing a file-based communication system that allows Qwen Code to perform internet research and view results in real-time. It monitors research requests and responses as they happen, providing a seamless experience similar to the original search functionality.
+This project bridges that gap by providing a file-based communication system that allows Qwen Code to perform internet research. It monitors research requests and responses through files, providing a seamless experience similar to the original search functionality.
 
 ## Features
 
-- **Real-time Research Monitoring**: Watch as Qwen Code performs web searches and retrieves information
-- **File-based Communication**: Uses a simple file-watching mechanism for communication between components
+- **File-based Communication**: Uses a simple file-watching mechanism for communication
 - **Multi-engine Search**: Leverages both DuckDuckGo and Google search engines for comprehensive results
 - **Content Fetching**: Retrieves and processes web page content for detailed information
-- **Windows Forms UI**: Graphical interface showing research requests and responses in a chat-like format
 - **Logging**: All activities are logged for review and debugging
 
 ## Installation
 
 For installation instructions, please refer to the official Qwen Code documentation:
-[Qwen Code Installation Guide](https://github.com/qwen-code/qwen-code)
+[Qwen Code Installation Guide and Qwen Code Complete Introduction](https://github.com/QwenLM/qwen-code)
 
 ### Prerequisites
 
-- .NET 9.0 SDK or later (for building the viewer)
 - Python 3.6 or later (for the research engine)
 - Required Python packages: `requests`, `beautifulsoup4`, `ddgs`, `googlesearch-python`
 
@@ -44,12 +41,12 @@ pip install -r requirements.txt
 
 ## Usage Instructions
 
-### Running the Pre-built Application
+### Running the Research Engine
 
-1. Double-click `scripts\run-viewer.bat` to start the viewer application
-2. Double-click `scripts\run-engine.bat` to start the research engine
-3. Create or modify `research_request.txt` with your search query
-4. Watch the results appear in the viewer window
+1. Double-click `scripts\run-engine.bat` to start the research engine
+2. Create or modify `research_request.txt` with your search query
+3. Check `research_response.txt` for the results
+4. View activities in `research.log`
 
 ### Testing the System
 
@@ -59,40 +56,32 @@ To verify that everything is working correctly:
 2. Run the research engine using `scripts\run-engine.bat`
 3. Wait a few seconds for the research to complete
 4. Check that `research_response.txt` now contains the results
-5. Run the viewer using `scripts\run-viewer.bat` to see the results in the UI
-
-### Building the Application
-
-If you need to rebuild the application:
-
-1. Double-click `scripts\build-viewer.bat` to build the Windows Forms application
-2. The executable will be created in `src\ResearchViewer\bin\Release\net9.0-windows\`
 
 ## How It Works
 
-The system consists of two main components:
+The research engine monitors `research_request.txt` for search queries. When it detects a new query, it:
 
-1. **Research Viewer (Windows Forms Application)**: A graphical application that monitors research activities by watching files in real-time
-2. **Research Engine (Python Script)**: Performs actual web searches and communicates with the viewer through files
-
-Communication happens through two files in the project root directory:
-- `research_request.txt`: Contains the search query
-- `research_response.txt`: Contains the search results
+1. Performs web searches using DuckDuckGo (with Google as a fallback)
+2. Fetches content from the top search results
+3. Formats the results into a readable format
+4. Writes the formatted results to `research_response.txt`
 
 ## Troubleshooting
 
 ### Common Issues
 
-1. **Research engine not working**: Make sure the research engine is running from the project root directory, not from the ResearchEngine directory. The batch script `scripts\run-engine.bat` handles this correctly.
-
-2. **Viewer not showing updates**: Ensure that both the viewer and research engine are running, and that you're editing the `research_request.txt` file in the project root directory.
-
-3. **Python packages missing**: If you get import errors, make sure you've installed all required packages:
+1. **Python packages missing**: If you get import errors, make sure you've installed all required packages:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Permission errors**: If you get permission errors when writing files, make sure no other processes are locking the research files.
+2. **Permission errors**: If you get permission errors when writing files, make sure no other processes are locking the research files.
+
+3. **No results in response file**: Check that:
+   - The research engine is running
+   - The request file contains a valid query
+   - You wait a few seconds for processing to complete
+   - Internet connection is working
 
 ## Contributing
 
