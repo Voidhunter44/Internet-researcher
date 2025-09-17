@@ -1,0 +1,17 @@
+# Private documentation
+private_docs/
+
+# Log files
+*.log
+
+# Research files (they contain user-specific data)
+research_request.txt
+research_response.txt
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# IDE files
+*.swp
+*.swo
