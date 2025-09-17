@@ -19,11 +19,6 @@ This project bridges that gap by providing a file-based communication system tha
 - **Content Fetching**: Retrieves and processes web page content for detailed information
 - **Logging**: All activities are logged for review and debugging
 
-   ## Qwen Code Cli Download and Installation
-   
- - For installation instructions for Qwen Code Cli, please refer to the official Qwen Code documentation:
- - [Qwen Code Installation Guide and Qwen Code Complete Introduction](https://github.com/QwenLM/qwen-code)   
-
 ## Download & Installation
 
 ### Prerequisites
@@ -35,7 +30,7 @@ This project bridges that gap by providing a file-based communication system tha
 
 1. **Clone the repository** (requires Git):
    ```bash
-   git clone https://github.com/Voidhunter44/internet-research-viewer.git
+   git clone https://github.com/Voidhunter44/Internet-researcher.git
    ```
 
 2. **Or download as ZIP**:
@@ -47,7 +42,7 @@ This project bridges that gap by providing a file-based communication system tha
 
 ```bash
 # Navigate to the project directory
-cd internet-research-viewer
+cd Internet-researcher
 
 # Option 1: Install packages individually
 pip install requests beautifulsoup4 ddgs googlesearch-python
