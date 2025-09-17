@@ -19,6 +19,11 @@ This project bridges that gap by providing a file-based communication system tha
 - **Content Fetching**: Retrieves and processes web page content for detailed information
 - **Logging**: All activities are logged for review and debugging
 
+   ## Qwen Code Cli Download and Installation
+   
+ - For installation instructions for Qwen Code Cli, please refer to the official Qwen Code documentation:
+ - [Qwen Code Installation Guide and Qwen Code Complete Introduction](https://github.com/QwenLM/qwen-code)   
+
 ## Download & Installation
 
 ### Prerequisites
